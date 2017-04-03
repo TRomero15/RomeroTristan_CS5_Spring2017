@@ -9,6 +9,7 @@
 //System Libraries
 #include <iostream>  //Input - Output Library
 #include <iomanip>
+#include <cmath>
 using namespace std; //Name-space under which system libraries exist
 
 //User Libraries
@@ -35,8 +36,8 @@ int main(int argc, char** argv) {
         for(celsius=0;celsius<=20;celsius++)
         {
             fhrheit=(9/5 * celsius)+32;//Fahrenheit conversion formula
-            cout<<right<<setw(10)<<celsius;
-            cout<<setw(10)<<fhrheit<<endl;
+            cout<<right<<setw(4)<<celsius;
+            cout<<setw(14)<<fhrheit<<endl;
         }
         cout<<endl;
    //Exit stage right!
