@@ -2,15 +2,16 @@
  * File: Sum of dice 
  * Author: Tristan Romero 
  * Created on march 28th , 2017, 
- * Purpose:   
+ * Purpose: Calculate your weight in ibs
  */
 
 //System Libraries
-#include <iostream>  
-#include <ctime>
-#include <cstdlib> //Input - Output Library
-using namespace std; //Name-space under which system libraries exist
-
+#include <iostream>   //input - output library
+#include <ctime>      //time to set the seed
+#include <cstdlib>    //srand and rand function
+#include <iomanip>    //formatting input
+using namespace std;  //Name-space under which system libraries exist
+ 
 //User Libraries
 
 //Global Constants
@@ -29,7 +30,7 @@ int main(int argc, char** argv) {
             f8=0,f9=0,f10=0,f11=0,f12=0;//how many times did we throw this value 
    
     //loop and throw the dice 
-    for(int thrw=1;thrw<=nThrws;thrw++){
+    for(unsigned int thrw=1;thrw<=nThrws;thrw++){
         char die1=rand() %6+1;//[1,6]
         char die2=rand() %6+1; //[1,6]
         char sum = die1 +die2;

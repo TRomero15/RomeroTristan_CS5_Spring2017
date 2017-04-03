@@ -2,7 +2,7 @@
  * File: Sum of dice 
  * Author: Tristan Romero 
  * Created on 28 March 2017
- * Purpose:   
+ * Purpose: Simulate a Craps game  
  */
 
 //System Libraries

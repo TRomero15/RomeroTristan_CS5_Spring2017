@@ -2,10 +2,7 @@
  * File:   main.cpp
  * Author: Tristan Romero 
  * Created on February 19, 2017, 6:26 PM
- * Purpose:   
- 
-  
-
+ * Purpose:   Math tutor
  */
 
 //System Libraries
