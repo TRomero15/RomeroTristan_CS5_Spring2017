@@ -300,7 +300,7 @@ int main(int argc, char** argv) {
         }
     case '9':{
         //Declare and initialize variables
-        const float calBrMn=3.9;//Calories burned per minute = 3.9
+        float calBrMn=3.9;//Calories burned per minute = 3.9
                 int minutes, //amount of minutes ran on treadmill
                     burned=0;//set starting calories burned value to 0
 
