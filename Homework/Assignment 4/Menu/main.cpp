@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
         cout<<" Type 6 to display a math tutor program "<<endl;
         cout<<" Type 7 to calculate your weight in lbs "<<endl;
         cout<<" Type 8 to display a Celsius and Fahrenheit table "<<endl;
-        cout<<" Type 9 for Problem 9 "<<endl;
+        cout<<" Type 9 for calories burned on treadmill "<<endl;
         
         //input the choice
         cout<<" Problem "; 
@@ -257,51 +257,22 @@ int main(int argc, char** argv) {
                 break;
         }
         case '7':{
-                //set the random number seed 
-                srand(static_cast<unsigned int>(time(0)));
+             //Declare and initialize  variables
+            const float MSSERTH=5.972e27f;//Mass of earth in grams 
+            const float GCONST=6.673E-8f;//Gravitational Constant cm^3/gm sec^2
+            const float CNVFTCM=1.0f/30.48f;//Conversion from ft to cm
+            const float CNVMFT=5280.0f;     //Conversion from miles to feet 
+            const float RADERTH=3959;       //Radius of the earth in miles 
+            float myWeight;//Result in lbs
+                float myMass=4.97;//Units of slugs 
 
 
-                //declare variables
-                unsigned int nThrws=36000;
-                int f2=0,f3=0,f4=0,f5=0,f6=0,f7=0,
-         f8=0,f9=0,f10=0,f11=0,f12=0;//how many times did we throw this value 
-
-                //loop and throw the dice 
-                for(unsigned int thrw=1;thrw<=nThrws;thrw++){
-                    char die1=rand() %6+1;//[1,6]
-                    char die2=rand() %6+1; //[1,6]
-                    char sum = die1 +die2;
-                    switch (sum){
-                        case 2:f2++;break;
-                        case 3:f3++;break;
-                        case 4:f4++;break;
-                        case 5:f5++;break;
-                        case 6:f6++;break;
-                        case 7:f7++;break;
-                        case 8:f8++;break;
-                        case 9:f9++;break;
-                        case 10:f10++;break;
-                        case 11:f11++;break;
-                        case 12:f12++;break;
-                        default: cout<<"Bad Throw, get rekt noob "<<endl;
-                    }
-                    }
-
-           //Output the transformed data
-           cout<<" statistics of summing and throwing a pair of Dice "<<endl;
-           cout<<"2 was thrown "<<f2<<" out of "<<nThrws<<" times "<<endl;
-           cout<<"3 was thrown "<<f3<<" out of "<<nThrws<<" times "<<endl;
-           cout<<"4 was thrown "<<f4<<" out of "<<nThrws<<" times "<<endl;
-           cout<<"5 was thrown "<<f5<<" out of "<<nThrws<<" times "<<endl;
-           cout<<"6 was thrown "<<f6<<" out of "<<nThrws<<" times "<<endl;
-           cout<<"7 was thrown "<<f7<<" out of "<<nThrws<<" times "<<endl;
-           cout<<"8 was thrown "<<f8<<" out of "<<nThrws<<" times "<<endl;
-           cout<<"9 was thrown "<<f9<<" out of "<<nThrws<<" times "<<endl;
-           cout<<"10 was thrown "<<f10<<" out of "<<nThrws<<" times "<<endl;
-           cout<<"11 was thrown "<<f11<<" out of "<<nThrws<<" times "<<endl;
-           cout<<"12 was thrown "<<f12<<" out of "<<nThrws<<" times "<<endl;
-           cout<<endl<<" total throws = "<<(f2+f3+f4+f5+f6+f7+f8+f9+f10+f11+f12)
-                <<" = "<<nThrws<<endl;
+                //Map inputs to outputs or process the data
+                 myWeight=GCONST*CNVFTCM*CNVFTCM*CNVFTCM*MSSERTH*myMass
+                       /(RADERTH*RADERTH*CNVMFT*CNVMFT);
+    //Output the transformed data
+    cout<<fixed<<setprecision(1)<<showpoint;
+    cout<<"Your scrawny ass weighs = "<<myWeight<<" ibs "<<endl;
                 break;
         }
         case '8':{
@@ -328,7 +299,25 @@ int main(int argc, char** argv) {
                 break;
         }
     case '9':{
-                cout<<" In Problem solution 9 "<<endl;
+        //Declare and initialize variables
+        const float calBrMn=3.9;//Calories burned per minute = 3.9
+                int minutes, //amount of minutes ran on treadmill
+                    burned=0;//set starting calories burned value to 0
+
+        //Input data
+        cout<<" this program will calculate the amount of calories burned ";
+        cout<<" while being on a treadmill for 10,15,20,25,30 minutes "<<endl;
+        cout<<" Minutes ran         Calories burned "<<endl;
+        cout<<" --------------------------------- "<<endl;
+
+        //loop and calculate calories burned 
+        for (minutes=10;minutes<=30;minutes+=5)
+        {
+            burned=calBrMn*minutes;//calories burned per minutes * minutes ran
+            cout<<" you ran for "<<minutes<<" minutes and burned ";
+            cout<<burned<< " calories doing so "<<endl;
+        }
+    
                 break;
         }
             default :{
