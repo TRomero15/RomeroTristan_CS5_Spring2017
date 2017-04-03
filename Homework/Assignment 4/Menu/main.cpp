@@ -5,6 +5,9 @@
 
 //System Libraries
 #include <iostream>  //Input - Output Library
+#include <iomanip>
+#include <cmath>
+#include <ctime>
 using namespace std; //Name-space under which system libraries exist
 
 //User Libraries
@@ -29,7 +32,7 @@ int main(int argc, char** argv) {
         cout<<" Type 5 to display an ascii character set "<<endl;
         cout<<" Type 6 to display a math tutor program "<<endl;
         cout<<" Type 7 to calculate your weight in lbs "<<endl;
-        cout<<" Type 8 for Problem 8 "<<endl;
+        cout<<" Type 8 to display a Celsius and Fahrenheit table "<<endl;
         cout<<" Type 9 for Problem 9 "<<endl;
         
         //input the choice
@@ -241,8 +244,8 @@ int main(int argc, char** argv) {
                         }
                     }
                     //Output the transformed data
-                    cout<<op1<<endl;
-                    cout<<choice<<op2<<endl;
+                    cout<<setw(8)<<op1<<endl;
+                    cout<<choice<<setw(7)<<op2<<endl;
                     cout<<"----------"<<endl;
                     cin>>result;
 
@@ -302,7 +305,26 @@ int main(int argc, char** argv) {
                 break;
         }
         case '8':{
-                cout<<" In Problem solution 8 "<<endl;
+             //Declare variables
+             float celsius, //Celsius 
+                fhrheit;//Fahrenheit
+
+
+        //Input data
+       cout<<" Display a table of the Celsius temperatures from 0 to 20 "<<endl;
+       cout<<" and their Fahrenheit equivalents "<<endl;
+       cout<<" Celsius                Fahrenheit"<<endl;
+       cout<<" ---------------------------------"<<endl;
+
+
+             //loop and display Celsius and Fahrenheit temperatures 
+               for(celsius=0;celsius<=20;celsius++)
+               {
+                fhrheit=(9/5 * celsius)+32;//Fahrenheit conversion formula
+                cout<<left<<setw(1)<<celsius;
+                cout<<right<<setw(10)<<fhrheit<<endl;
+               }
+               cout<<endl;    
                 break;
         }
     case '9':{

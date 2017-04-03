@@ -1,12 +1,14 @@
 /* 
- * File: Gaddis chapter 3, problem 11
+ * File: main.cpp
  * Author: Tristan Romero 
- * Created on 7 March 2017
- * Purpose: Convert Celsius temperatures to Fahrenheit temperatures.  
+ * Created on 2 April 2017
+ * Purpose: display a table of the Celsius temperatures from 0 to 20 
+ *          and their Fahrenheit equivalents. 
  */
 
 //System Libraries
 #include <iostream>  //Input - Output Library
+#include <iomanip>
 using namespace std; //Name-space under which system libraries exist
 
 //User Libraries
@@ -18,24 +20,26 @@ using namespace std; //Name-space under which system libraries exist
 //Execution begins here
 int main(int argc, char** argv) {
     //Declare variables
-    double celsius,
+    float celsius, //Celsius 
             fhrheit;//Fahrenheit
     
     
     //Input data
-    cout<<"this program converts the Celsius temperature ";
-    cout<<"to Fahrenheit temperature "<<endl;
-    cout<<"enter the temperature in Celsius here "<<endl;
-    cin>>celsius;
+    cout<<" Display a table of the Celsius temperatures from 0 to 20 "<<endl;
+    cout<<" and their Fahrenheit equivalents "<<endl;
+    cout<<" Celsius                Fahrenheit"<<endl;
+    cout<<" ---------------------------------"<<endl;
+        
     
-    //Map inputs to outputs or process the data
-    fhrheit = (9/5 * celsius) + 32; //Fahrenheit conversion formula
-    
-    //Output the transformed data
-    cout<<"the Celsius temperature converted into Fahrenheit ";
-    cout<<"equates to "<<fhrheit<<endl;
-    
-    //Exit stage right!
+    //loop and display Celsius and Fahrenheit temperatures 
+        for(celsius=0;celsius<=20;celsius++)
+        {
+            fhrheit=(9/5 * celsius)+32;//Fahrenheit conversion formula
+            cout<<right<<setw(10)<<celsius;
+            cout<<setw(10)<<fhrheit<<endl;
+        }
+        cout<<endl;
+   //Exit stage right!
     return 0;
 }
 
